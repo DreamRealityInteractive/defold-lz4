@@ -1,2 +1,7 @@
 # C++ symbol in your extension
 name: "defoldlz4"
+
+platforms:
+    x86_64-linux:
+        context:
+            flags: ["-std=c++17"]
