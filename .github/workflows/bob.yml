@@ -2,6 +2,7 @@ name: Build with bob
 
 on:
   push:
+  workflow_dispatch:
 
 env:
   VERSION_FILENAME: 'info.json'
