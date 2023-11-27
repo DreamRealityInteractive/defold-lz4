@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 
 env:
-  VERSION_FILENAME: 'info.json'
+  DEFOLD_VERSION: '57b34efdf44a922acc6f21d285b207029b53927d'
   BUILD_SERVER: 'https://build.defold.com'
 
 jobs:
@@ -21,12 +21,6 @@ jobs:
       - uses: actions/setup-java@v1
         with:
           java-version: '17'
-
-      - name: Get Defold version
-        run: |
-          TMPVAR=`curl -s http://d.defold.com/stable/${{env.VERSION_FILENAME}} | jq -r '.sha1'`
-          echo "DEFOLD_VERSION=${TMPVAR}" >> $GITHUB_ENV
-          echo "Found version ${TMPVAR}"
 
       - name: Download bob.jar
         run: |
